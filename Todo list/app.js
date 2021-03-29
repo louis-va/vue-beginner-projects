@@ -1,0 +1,31 @@
+const app = new Vue({
+    el: '#app',
+    data: {
+        title: 'Todo App',
+        newTodoLabel: 'New task',
+        btnAdd: 'Add',
+        btnRemove: 'Remove',
+        btnDone: 'All done',
+        newTodo: '',
+        todoList: []
+    },
+    methods: {
+        addTodo() {
+            console.log(this.newTodo);
+            this.todoList.push({
+                title: this.newTodo,
+                done: false
+            });
+            this.newTodo = '';
+        },
+        removeTodo(todo) {
+            const todoIndex = this.todoList.indexOf(todo);
+            this.todoList.splice(todoIndex, 1);
+        },
+        allDone() {
+            this.todoList.forEach(todo => {
+                todo.done = true;
+            })
+        }
+    }
+});
