@@ -1,7 +1,7 @@
 const app = new Vue({
     el: '#app',
     data: {
-        title: 'Todo App',
+        title: 'Task App',
         newTodoLabel: 'New task',
         btnAdd: 'Add',
         btnRemove: 'Remove',
